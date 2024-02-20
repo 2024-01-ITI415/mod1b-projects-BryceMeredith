@@ -322,6 +322,14 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8808670959709269746, guid: 0b8221f8eea0a314daa99123fae24230, type: 3}
+      propertyPath: applePrefab
+      value: 
+      objectReference: {fileID: 6905098305089231992, guid: 647253582e8303440baf9d4ac94fce3e, type: 3}
+    - target: {fileID: -8808670959709269746, guid: 0b8221f8eea0a314daa99123fae24230, type: 3}
+      propertyPath: applesPrefab
+      value: 
+      objectReference: {fileID: 6905098305089231992, guid: 647253582e8303440baf9d4ac94fce3e, type: 3}
+    - target: {fileID: -8808670959709269746, guid: 0b8221f8eea0a314daa99123fae24230, type: 3}
       propertyPath: leftAndRightEdge
       value: 23.2
       objectReference: {fileID: 0}

@@ -7,7 +7,7 @@ public class AppleTree : MonoBehaviour
 
     [Header ("Set in Inspector")]
     // Prefab for instantiating apples
-    public GameObject applesPrefab;
+    public GameObject applePrefab;
 
     // Speed at which AppleTree moves
     public float speed = 1f;
@@ -26,7 +26,14 @@ public class AppleTree : MonoBehaviour
     void Start()
     {
         // Dropping Apples every second
-        
+        Invoke ("DropApple", 2f);
+    }
+
+    void DropApple()
+    {
+        GameObject apple = Instantiate<GameObject> (applePrefab);
+        apple.transform.position = transform.position;
+        Invoke ("DropApple", secondsBetweenAppleDrops);
     }
 
     // Update is called once per frame
