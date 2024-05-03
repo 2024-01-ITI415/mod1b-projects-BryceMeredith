@@ -6,14 +6,20 @@ public class Archer : MonoBehaviour
 {
     [Header("Set in Inspector")]
     public GameObject               prefabArrow;
+    public GameObject               prefabTarget;
     public float                    velocityMult = 8f;
 
     [Header("Set Dynamically")]
     public GameObject               launchPoint;
     public Vector3                  launchPos;
+    public GameObject               targetLocation;
+    public Vector3                  targetLoc;
     public GameObject               arrow;
+    public GameObject               target;
     public bool                     aimingMode;
     private Rigidbody               arrowRigidbody;
+    private Rigidbody               targetRigidbody;
+
 
 
     void Awake() {
@@ -21,6 +27,8 @@ public class Archer : MonoBehaviour
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
         launchPos = launchPointTrans.position;
+
+        Transform tLocTrans = transform.Find("TargetLocation");
     }
 
     void OnMouseEnter() {
