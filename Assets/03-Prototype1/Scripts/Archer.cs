@@ -22,13 +22,14 @@ public class Archer : MonoBehaviour
 
 
 
+
     void Awake() {
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
         launchPos = launchPointTrans.position;
 
-        Transform tLocTrans = transform.Find("TargetLocation");
+        //Transform tLocTrans = transform.Find("TargetLocation");
     }
 
     void OnMouseEnter() {

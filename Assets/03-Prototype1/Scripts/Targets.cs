@@ -1,27 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Targets : MonoBehaviour
 {
     [Header("Set in Inspector")]
+    public TextMeshProUGUI          keepScore;
     public GameObject               targetPrefab;
     public float                    speed = 1f;
     public float                    topAndBottomEdge = 10f;
     public float                    chanceToChangeDirections = 0.1f;
+    private int                     score;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 pos = transform.position;
-        pos.y += speed * Time.deltaTime;
+        pos.y += (speed * Time.deltaTime);
         transform.position = pos;
 
         // Changing Direction
@@ -39,6 +36,20 @@ public class Targets : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision coll) {
-        Destroy(this.gameObject);
+        GameObject collidedWith = coll.gameObject;
+        if (collidedWith.tag == "Arrow") {
+            Destroy(collidedWith);
+            score = score + 100;
+            SetScore();
+        }
+    }
+
+    void SetScore() {
+        keepScore.text = "Score: " + score.ToString();
+    }
+
+    void Start() {
+        score = 0;
+        SetScore();
     }
 }
